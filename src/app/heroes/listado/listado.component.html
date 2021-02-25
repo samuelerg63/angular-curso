@@ -1,0 +1,20 @@
+<p>listado de heroes!</p>
+
+<div *ngIf="heroes.length <= 3; else noBorrado" ><!--este asemeja un if-->
+    <h3>heroe borrado:  <small>{{borrado1}}</small></h3>
+</div>
+
+<ng-template #noBorrado><!--el #noborrado esta siendo llamado en el if de arriba-->
+    <h3>no ha borrado nada</h3>
+</ng-template >
+
+<button (click) = "borrarHeroe()"> borrar </button>
+
+<ul>
+
+    <li *ngFor="let i of heroes; let heroe = index">
+       {{heroe + 1}} - {{i}}<!--ngFor es igual que un bucle for, recorre todo el arreglo y le asignamos la variable i para recorrer-->
+    </li>
+
+</ul>
+
